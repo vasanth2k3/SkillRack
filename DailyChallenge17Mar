@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void main()
+{
+    int a;
+    scanf("%d", &a);
+    int arr[a];
+    for (int i = 0; i < a; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    int temp[20];
+    int tempCount=0;
+    int count = 0;
+    while (a > 0)
+    {
+        if ((count + 1) % 2 != 0 && arr[count] % 2 == 0)
+        {
+            temp[tempCount]=arr[count];
+            tempCount++;
+            count++;
+        }
+        else if ((count + 1) % 2 == 0 && arr[count] % 2 != 0)
+        {
+            temp[tempCount]=arr[count];
+            tempCount++;
+            count++;
+        }
+        else
+        {   
+            count++;
+        }
+        a--;
+    }
+    if(tempCount==0){
+        printf("-1");
+    }
+}
