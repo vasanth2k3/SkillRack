@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void main()
+{
+    int N;
+    scanf("%d",&N);
+    int count = 0;
+    for (int X = 1; X <= N; X++) {
+        if (N - X > 0) {
+            count++;
+        }
+    }
+    printf("%d",count);
+}
