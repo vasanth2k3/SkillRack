@@ -1,0 +1,16 @@
+s= input().strip() 
+n, f=len(s), False
+for i in (0, 1):
+  l, r, cnt = 0, n // 2 + 1, 0
+  while r < n and cnt <= 1:
+      if s[1] != s[r]:
+        if i == 0: 
+            r += 1
+        else: 
+            l += 1
+        cnt += 1
+        continue
+      l, r=l+1,r+1
+  f|= cnt == 1
+  if f: break
+print("YES" if f else "NO")
