@@ -1,0 +1,6 @@
+RegistrationNumber=input().strip()
+sum=0
+for i in RegistrationNumber:
+    if i.isdigit():
+        sum+=int(i)
+print(sum)
