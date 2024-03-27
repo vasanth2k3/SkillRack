@@ -1,0 +1,7 @@
+n, arr, k=int(input()), tuple (map(int, input().split())), int(input())
+idx = n-1
+while idx >= 0 and arr[idx] != k:
+  idx = 1
+for i in range(n):
+  if i ! idx:
+    print(arr[i], end= "")
