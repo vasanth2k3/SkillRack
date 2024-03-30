@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    double T;
+    printf("Input:\n");
+    scanf("%lf", &T);
+    
+    double Fahrenheit = (T * 9 / 5) + 32;
+
+    printf("Output:\n%.2lf\n", Fahrenheit);
+
+    return 0;
+}
