@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main() {
+    char s1[100], s2[100];
+    printf("Enter two strings: ");
+    scanf("%s %s", s1, s2);
+
+    int count1[26] = {0}; // Array to count occurrences of characters in s1
+    int count2[26] = {0}; // Array to count occurrences of characters in s2
+
+    // Count occurrences of characters in s1
+    for (int i = 0; i < strlen(s1); i++) {
+        if (isalpha(s1[i])) {
+            count1[tolower(s1[i]) - 'a']++;
+        }
+    }
+
+    // Count occurrences of characters in s2
+    for (int i = 0; i < strlen(s2); i++) {
+        if (isalpha(s2[i])) {
+            count2[tolower(s2[i]) - 'a']++;
+        }
+    }
+
+    // Compare character counts
+    int areEqual = 1;
+    for (int i = 0; i < 26; i++) {
+        if (count1[i] != count2[i]) {
+            areEqual = 0;
+            break;
+        }
+    }
+
+    if (areEqual)
+        printf("yes\n");
+    else
+        printf("no\n");
+
+    return 0;
+}
