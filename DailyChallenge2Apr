@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char site[1000][1000];
+    int count = 0;
+    
+    for (int i = 0; i < n; i++) {
+        fgets(site[i], sizeof(site[i]), stdin);
+        
+        int st = 0;
+        while (site[i][st] != 'w' || site[i][st + 1] != '.') {
+            st++;
+        }
+        
+        int en = st + 1;
+        while (site[i][en] != '/') {
+            en++;
+        }
+        
+        site[i][en] = '\0'; // Terminate the string at position 'en' to extract the domain
+        
+        int found = 0;
+        for (int j = 0; j < count; j++) {
+            if (strcmp(site[i], site[j]) == 0) {
+                found = 1;
+                break;
+            }
+        }
+        
+        if (!found) {
+            strcpy(site[count], site[i]);
+            count++;
+        }
+    }
+    
+    printf("%d", count);
+    
+    return 0;
+}
