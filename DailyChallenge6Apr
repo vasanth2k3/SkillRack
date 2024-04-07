@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int r, c, k;
+    scanf("%d %d %d", &r, &c, &k);
+
+    int f = 1; // Initialize f as true (1) for boolean logic
+    int i, j;
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < c; j++) {
+            int num;
+            scanf("%d", &num);
+            if (num != k && (i == 0 || i == r - 1 || j == 0 || j == c - 1)) {
+                f = 0; // Set f as false (0) if conditions are not met
+            }
+        }
+    }
+
+    printf("%s\n", f ? "YES" : "NO");
+
+    return 0;
+}
