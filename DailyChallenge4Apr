@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int r, c;
+    scanf("%d %d", &r, &c); // Read the number of rows and columns
+
+    int matrix[r][c];
+    // Read the elements of the matrix
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    int max_sum = 0, max_row = 0;
+    // Calculate the sum of each row and find the row with the maximum sum
+    for (int i = 0; i < r; i++) {
+        int row_sum = 0;
+        for (int j = 0; j < c; j++) {
+            row_sum += matrix[i][j];
+        }
+        if (row_sum > max_sum) {
+            max_sum = row_sum;
+            max_row = i;
+        }
+    }
+
+    printf("Row with maximum sum: %d\n", max_row + 1); // Adding 1 to index to match human-readable index
+
+    return 0;
+}
