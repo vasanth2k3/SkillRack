@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);
+
+    // Arrays to store input numbers and their original positions
+    int numbers[N];
+    int positions[N];
+
+    // Read input values and initialize positions array
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &numbers[i]);
+        positions[i] = i + 1; // Initialize positions from 1 to N
+    }
+
+    // Perform selection sort on numbers array and update positions array accordingly
+    for (int i = 0; i < N - 1; i++) {
+        int min_index = i;
+        for (int j = i + 1; j < N; j++) {
+            if (numbers[j] < numbers[min_index]) {
+                min_index = j;
+            }
+        }
+        // Swap values in the numbers array
+        int temp = numbers[min_index];
+        numbers[min_index] = numbers[i];
+        numbers[i] = temp;
+        // Swap values in the positions array
+        temp = positions[min_index];
+        positions[min_index] = positions[i];
+        positions[i] = temp;
+    }
+
+    // Print the positions array after sorting
+    for (int i = 0; i < N; i++) {
+        printf("%d ", positions[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
