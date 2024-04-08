@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int n;
+    char temp[100], s[100][100];
+
+    // Input number of strings
+    printf("Enter the number of strings: ");
+    scanf("%d", &n);
+
+    // Input strings
+    printf("Enter the strings: ");
+    for (int i = 0; i < n; i++) {
+        scanf("%s", s[i]);
+    }
+
+    // Sort strings based on custom criteria (bubble sort)
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            // Concatenate strings three times for comparison
+            char ab[100], ba[100];
+            strcpy(ab, s[j]);
+            strcat(ab, s[j + 1]);
+            strcpy(ba, s[j + 1]);
+            strcat(ba, s[j]);
+
+            // Compare and swap if needed
+            if (strcmp(ba, ab) > 0) {
+                strcpy(temp, s[j]);
+                strcpy(s[j], s[j + 1]);
+                strcpy(s[j + 1], temp);
+            }
+        }
+    }
+
+    // Print the sorted strings
+    printf("Sorted strings: ");
+    for (int i = 0; i < n; i++) {
+        printf("%s", s[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
