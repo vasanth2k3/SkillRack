@@ -1,0 +1,23 @@
+void multiplesToBeginning(int arr[], int N) {
+    int temp[N];
+    int j = 0; // Index for storing multiples of 10 in temp array
+
+    // Move multiples of 10 to the beginning of temp array
+    for (int i = 0; i < N; i++) {
+        if (arr[i] % 10 == 0) {
+            temp[j++] = arr[i];
+        }
+    }
+
+    // Move non-multiples of 10 to the end of temp array
+    for (int i = 0; i < N; i++) {
+        if (arr[i] % 10 != 0) {
+            temp[j++] = arr[i];
+        }
+    }
+
+    // Copy temp array back to arr
+    for (int i = 0; i < N; i++) {
+        arr[i] = temp[i];
+    }
+}
