@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n); // Input the number of integers
+
+    // Initialize variables for previous and current integers
+    int prev, curr;
+    scanf("%d", &prev); // Input the first integer
+
+    // Output the first integer as it is
+    printf("%d ", prev);
+
+    n--; // Decrease the count of remaining integers
+
+    // Loop to process the remaining integers
+    while (n > 0) {
+        scanf("%d", &curr); // Input the current integer
+        curr = (prev < curr) ? prev : curr; // Calculate the minimum between prev and curr
+        printf("%d ", curr); // Output the updated current integer
+        prev = curr; // Update prev for the next iteration
+        n--; // Decrease the count of remaining integers
+    }
+
+    return 0;
+}
