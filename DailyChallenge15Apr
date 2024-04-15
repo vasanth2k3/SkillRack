@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int seconds, days, hours, minutes;
+
+    scanf("%d", &seconds);
+
+    days = seconds / (24 * 3600);
+    seconds = seconds % (24 * 3600);
+    hours = seconds / 3600;
+    seconds %= 3600;
+    minutes = seconds / 60;
+    seconds %= 60;
+
+    printf("%dD %02d:%02d:%02d\n", days, hours, minutes, seconds);
+
+    return 0;
+}
