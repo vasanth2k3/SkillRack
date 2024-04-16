@@ -1,0 +1,5 @@
+s = input()
+if all(char.lower() in ('x', 'y') for char in s):
+    print("yes")
+else:
+    print("no")
