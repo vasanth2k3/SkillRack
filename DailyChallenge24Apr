@@ -1,0 +1,8 @@
+a=input().strip()
+b=input().strip()
+c=set(a)
+d=set(b)
+if c==d:
+  print("yes")
+else:
+  print("no")
