@@ -1,0 +1,19 @@
+# Accepting input
+a, b = input().split()
+
+# Converting strings to lists of characters
+c = list(a)
+d = list(b)
+
+# Calculating lengths of strings
+e = len(c)
+f = len(d)
+
+# Trimming the longer string
+if e > f:
+    c = c[:f]
+else:
+    d = d[:e]
+
+# Printing the modified strings
+print(''.join(c), ''.join(d))
